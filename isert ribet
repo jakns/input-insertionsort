@@ -1,0 +1,53 @@
+public class PRothonk {
+    public static void main (String[] args) {
+    int[] cinta = {150, 162, 170, 155, 140};    
+    tampil(cinta);
+    insertionSort(cinta);
+    cetakArray(cinta);
+    terkecil(cinta);
+    ratarata(cinta);    
+    }
+    public static void tampil(int[] cinta){
+        System.out.println("Data sebelum sorting");
+        System.out.println(cinta[0]+" "+cinta[1]+" "+cinta[2]+" "+cinta[3]+" "+cinta[4]+" \n");
+    }
+    public static void terkecil(int[] cinta){
+        int terkecil = cinta[0];
+        int terbesar = cinta[0];
+        for(int i=0; i<cinta.length; i++){
+            if(terkecil > cinta[i]){
+                terkecil = cinta [i];
+            }
+            if(terbesar < cinta[i]){
+                terbesar = cinta[i];
+            }
+        }
+        System.out.println("Nilai maksimum      ="+terbesar);
+        System.out.println("Nilai minimum       ="+terkecil);
+    }
+    public static void ratarata(int[] cinta){
+        float jumlah, ratarata;
+        jumlah = cinta[0]+cinta[1]+cinta[2]+cinta[3]+cinta[4];
+        ratarata = jumlah/5;
+        System.out.println("Nilai rata-rata     ="+ratarata);
+    }
+    public static void cetakArray(int[] cinta) {
+        System.out.println("Data setelah sorting");
+        for (int i = 0; i < cinta.length; i++) {
+            System.out.print(cinta[i] + " ");    
+        }
+        System.out.println(" \n");        
+    }
+    public static void insertionSort(int[] testArray){
+        for(int i = 1; i < testArray.length; i++){
+            int j = i - 1;
+            int key = testArray[i];
+            while (j >= 0 && testArray[j] > key){
+                testArray[j + 1] = testArray[j];
+                j--;
+            }
+            testArray[j + 1] = key;
+        }
+
+    }
+}
